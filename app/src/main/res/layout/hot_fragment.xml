@@ -4,13 +4,24 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <com.youth.banner.Banner
-        android:id="@+id/banner"
+    <ScrollView
+        android:scrollbars="none"
+        android:fillViewport="true"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_150"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/hot_rlv"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_150"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/hot_rlv"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

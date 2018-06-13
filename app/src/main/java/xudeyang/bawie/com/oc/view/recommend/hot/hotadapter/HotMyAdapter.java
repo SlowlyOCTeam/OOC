@@ -209,7 +209,7 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
                     ao = true;
                 }else{
-                    setAnimate0(my.ll_b,600,-240,0);
+                    setAnimate0(my.ll_b,400,-80,0);
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_b,400);
 
@@ -217,7 +217,7 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_c,500);
 
-                    setAnimate0(my.ll_d,400,-80,0);
+                    setAnimate0(my.ll_d,600,-240,0);
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_d,400);
                   /*  my.ll_b.setVisibility(View.GONE);

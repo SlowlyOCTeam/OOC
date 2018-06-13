@@ -1,9 +1,13 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="xudeyang.bawie.com.oc.view.fragment.PassageFM">
 
     <include layout="@layout/header"/>
-
-</FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/passage_rlv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

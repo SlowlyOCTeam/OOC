@@ -1,21 +1,27 @@
 package xudeyang.bawie.com.oc.view.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.yixia.camera.util.Log;
+import java.util.List;
 
+import io.reactivex.Flowable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 import xudeyang.bawie.com.oc.R;
+import xudeyang.bawie.com.oc.utils.RetrofitUtil;
 import xudeyang.bawie.com.oc.view.activity.ZKCreationActivity;
+import xudeyang.bawie.com.oc.view.passage.PassageAdapter;
+import xudeyang.bawie.com.oc.view.passage.PassageBean;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,7 +41,7 @@ public class PassageFM extends Fragment {
     private String mParam1;
     private String mParam2;
     private View inflate;
-
+    private RecyclerView rlv;
 
     public PassageFM() {
         // Required empty public constructor
@@ -77,7 +83,10 @@ public class PassageFM extends Fragment {
         ImageView mycreation=inflate.findViewById(R.id.mycreation);
         textView.setText(mParam1);
 
-
+        //找组件
+        initto();
+        //网络请求+适配器展示
+        network();
         mycreation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +96,24 @@ public class PassageFM extends Fragment {
         });
 
         return inflate;
+    }
+    private void network() {
+        Flowable<PassageBean> passageAdapterFlowable = RetrofitUtil.getInstance().passageZong("F8EB129296C90580807D0C6D9FD9B7F7", "1");
+        passageAdapterFlowable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<PassageBean>() {
+                    @Override
+                    public void accept(PassageBean passageBean) throws Exception {
+                        List<PassageBean.DataBean> data = passageBean.getData();
+                        PassageAdapter passageAdapter = new PassageAdapter(data, getActivity());
+                        rlv.setAdapter(passageAdapter);
+                    }
+                });
+    }
+
+    private void initto() {
+        rlv = inflate.findViewById(R.id.passage_rlv);
+        rlv.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
 
