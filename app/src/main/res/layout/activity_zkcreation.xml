@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/m4a1"
+    tools:context=".view.activity.ZKCreationActivity">
+
+
+    <ImageView
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="@dimen/dp_130"
+        android:src="@drawable/yellowback"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_90"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="@dimen/dp_130"
+        android:src="@drawable/yellowback"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_290"
+        />
+
+
+
+    <ImageView
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:src="@drawable/catvideo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_110"
+        android:id="@+id/creation_video_click"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="视频"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_175"
+        android:textStyle="bold"
+        />
+    <ImageView
+        android:layout_width="@dimen/dp_57"
+        android:layout_height="@dimen/dp_57"
+        android:src="@drawable/survey"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_320"
+        android:id="@+id/creation_joke_click"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="段子"
+        android:textSize="@dimen/sp_18"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_370"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>

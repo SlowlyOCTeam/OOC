@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:padding="@dimen/dp_30"
+        android:layout_weight="1"
+        android:background="#d6d5d5"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:background="@drawable/raw_1500022714"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35" />
+            <TextView
+
+                android:text="QQ好友"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="@dimen/sp_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:background="@drawable/raw_1500022686"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35" />
+            <TextView
+
+                android:text="QQ空间"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/dp_16"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:background="@drawable/raw_1500022317"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35" />
+            <TextView
+                android:text="朋友圈"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="@dimen/sp_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+            android:layout_gravity="center"
+                android:background="@drawable/raw_1500022698"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35" />
+            <TextView
+
+                android:text="QQ微信"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="@dimen/sp_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/hot_pop_tv"
+        android:layout_weight="3"
+        android:textColor="#000"
+        android:textSize="@dimen/sp_18"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="取消"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
