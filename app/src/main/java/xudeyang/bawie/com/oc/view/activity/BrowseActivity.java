@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.zhy.changeskin.SkinManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +40,7 @@ public class BrowseActivity extends AppCompatActivity implements Imageinterface 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SkinManager.getInstance().register(this);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setContentView(R.layout.activity_browse);
         vp = findViewById(R.id.vp);
@@ -94,7 +97,11 @@ public class BrowseActivity extends AppCompatActivity implements Imageinterface 
     }
 
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SkinManager.getInstance().unregister(this);
+    }
 
 
 }

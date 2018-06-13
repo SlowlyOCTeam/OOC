@@ -1,21 +1,23 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="xudeyang.bawie.com.oc.view.fragment.VideoFM">
     <include layout="@layout/header"/>
-    <RelativeLayout
-        android:layout_marginTop="@dimen/dp_70"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/huanfu1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Button" />
-    </RelativeLayout>
-</FrameLayout>
+            android:text="换肤1" />
+        <Button
+            android:id="@+id/huanfu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="换肤2" />
+    </LinearLayout>
+</LinearLayout>

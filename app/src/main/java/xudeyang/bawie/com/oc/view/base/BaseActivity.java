@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.zhy.changeskin.SkinManager;
+
 /**
  * Created by Mac on 2018/5/7.
  */
@@ -21,11 +23,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        supportRequestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
-         initView();
+        SkinManager.getInstance().register(this);
+        initView();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
         initData();
         initHttp();
     }
@@ -68,5 +68,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         transaction.commit();
         // toFragment更新为当前的
         currentFragment = toFragment;
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SkinManager.getInstance().unregister(this);
     }
 }

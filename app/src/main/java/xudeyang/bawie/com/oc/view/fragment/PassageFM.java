@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zhy.changeskin.SkinManager;
+
 import java.util.List;
 
 import io.reactivex.Flowable;
@@ -68,6 +70,7 @@ public class PassageFM extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SkinManager.getInstance().register(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -116,5 +119,10 @@ public class PassageFM extends Fragment {
         rlv.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SkinManager.getInstance().unregister(getActivity());
 
+    }
 }

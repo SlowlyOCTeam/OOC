@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.zhy.changeskin.SkinManager;
+
 import skin.support.SkinCompatManager;
 import xudeyang.bawie.com.oc.R;
 
@@ -57,6 +59,7 @@ public class VideoFM extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SkinManager.getInstance().register(getActivity());
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -75,13 +78,26 @@ public class VideoFM extends Fragment {
     }
 
     private void init() {
-        Button btn = inflate.findViewById(R.id.button2);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button huanfu1 = inflate.findViewById(R.id.huanfu1);
+        Button huanfu2 = inflate.findViewById(R.id.huanfu2);
+        huanfu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SkinCompatManager.getInstance().loadSkin("night", SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN); // load by suffix
-
+                SkinManager.getInstance().removeAnySkin();
             }
         });
+        huanfu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SkinManager.getInstance().changeSkin("black");
+            }
+        });
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SkinManager.getInstance().unregister(getActivity());
+
     }
 }

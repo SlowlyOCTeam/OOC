@@ -8,6 +8,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.zhy.changeskin.SkinManager;
+
 import xudeyang.bawie.com.oc.R;
 import xudeyang.bawie.com.oc.view.base.BaseActivity;
 
@@ -18,6 +20,7 @@ public class ZKCreationActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zkcreation);
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         video = findViewById(R.id.creation_video_click);
         joke = findViewById(R.id.creation_joke_click);

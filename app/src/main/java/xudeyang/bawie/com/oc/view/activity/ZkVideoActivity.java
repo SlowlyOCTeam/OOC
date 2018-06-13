@@ -18,6 +18,7 @@ import com.yixia.camera.MediaRecorderBase;
 import com.yixia.camera.util.Log;
 import com.zhaoshuang.weixinrecorded.MyVideoView;
 import com.zhaoshuang.weixinrecorded.RecordedActivity;
+import com.zhy.changeskin.SkinManager;
 
 import xudeyang.bawie.com.oc.R;
 import xudeyang.bawie.com.oc.view.base.BaseActivity;
@@ -33,6 +34,7 @@ public class ZkVideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zk_video);
+        SkinManager.getInstance().register(this);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         picturere = findViewById(R.id.picture_relative);
         videore = findViewById(R.id.video_relative);
