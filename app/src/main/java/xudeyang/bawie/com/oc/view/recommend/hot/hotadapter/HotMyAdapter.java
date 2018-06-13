@@ -36,11 +36,18 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private boolean ao = false;
     private boolean co = false;
     private boolean oo = false;
+    private OnItemClickListener mOnItemClickListener;
+
     public HotMyAdapter(Context context, List<RecHotBean.DataBean> list) {
         this.context = context;
         this.list = list;
     }
-
+    public interface OnItemClickListener{
+        void onClick( int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener ){
+        this. mOnItemClickListener=onItemClickListener;
+    }
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -49,7 +56,7 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         final MyViewHolder my = (MyViewHolder) holder;
         Glide.with(context)
                 .load(list.get(position).getCover())
@@ -159,7 +166,15 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 }
             }
         });
+        if( mOnItemClickListener!= null){
+            my.touxian.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickListener.onClick(position);
+                }
+            });
 
+        }
 
 
         //动画
@@ -173,15 +188,15 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 my.img_a.setSelected(!my.img_a.isSelected());
                 setAnimate2(my.img_a,1000);
                 if (!ao){
-                    setAnimate0(my.ll_b,400,0,-80);
+                    setAnimate0(my.ll_b,400,0,-100);
                     // setAnimate2(my.img_b,1000);
                     setAnimate4(my.ll_b,400);
 
-                    setAnimate0(my.ll_c,500,0,-160);
+                    setAnimate0(my.ll_c,500,0,-200);
                     // setAnimate2(my.img_b,1000);
                     setAnimate4(my.ll_c,500);
 
-                    setAnimate0(my.ll_d,600,0,-240);
+                    setAnimate0(my.ll_d,600,0,-300);
                     // setAnimate2(my.img_b,1000);
                     setAnimate4(my.ll_d,600);
                     my.ll_b.setVisibility(View.VISIBLE);
@@ -209,15 +224,15 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
                     ao = true;
                 }else{
-                    setAnimate0(my.ll_b,400,-80,0);
+                    setAnimate0(my.ll_b,400,-100,0);
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_b,400);
 
-                    setAnimate0(my.ll_c,500,-160,0);
+                    setAnimate0(my.ll_c,500,-200,0);
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_c,500);
 
-                    setAnimate0(my.ll_d,600,-240,0);
+                    setAnimate0(my.ll_d,600,-300,0);
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_d,400);
                   /*  my.ll_b.setVisibility(View.GONE);

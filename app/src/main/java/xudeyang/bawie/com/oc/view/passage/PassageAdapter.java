@@ -63,15 +63,15 @@ public class PassageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 my.img_a.setSelected(!my.img_a.isSelected());
                 setAnimate2(my.img_a,1000);
                 if (!ao){
-                    setAnimate0(my.ll_b,400,0,-80);
+                    setAnimate0(my.ll_b,400,0,-100);
                     // setAnimate2(my.img_b,1000);
                     setAnimate4(my.ll_b,400);
 
-                    setAnimate0(my.ll_c,500,0,-160);
+                    setAnimate0(my.ll_c,500,0,-200);
                     // setAnimate2(my.img_b,1000);
                     setAnimate4(my.ll_c,500);
 
-                    setAnimate0(my.ll_d,600,0,-240);
+                    setAnimate0(my.ll_d,600,0,-300);
                     // setAnimate2(my.img_b,1000);
                     setAnimate4(my.ll_d,600);
                     my.ll_b.setVisibility(View.VISIBLE);
@@ -107,15 +107,15 @@ public class PassageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
                     ao = true;
                 }else{
-                    setAnimate0(my.ll_b,400,-80,0);
+                    setAnimate0(my.ll_b,400,-100,0);
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_b,400);
 
-                    setAnimate0(my.ll_c,500,-160,0);
+                    setAnimate0(my.ll_c,500,-200,0);
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_c,500);
 
-                    setAnimate0(my.ll_d,600,-240,0);
+                    setAnimate0(my.ll_d,600,-300,0);
                     // setAnimate2(my.img_b,1000);
                     setAnimate3(my.ll_d,400);
                   /*  my.ll_b.setVisibility(View.GONE);

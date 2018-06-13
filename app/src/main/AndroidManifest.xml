@@ -45,7 +45,8 @@
         <activity android:name=".view.activity.ZKCreationActivity" />
         <activity android:name=".view.activity.ZkVideoActivity" />
         <activity android:name=".view.activity.Cross_talkActivity" />
-        <activity android:name=".view.activity.BrowseActivity"></activity>
+        <activity android:name=".view.activity.BrowseActivity" />
+        <activity android:name=".view.activity.user.UserActivity"></activity>
     </application>
 
 </manifest>
