@@ -81,5 +81,6 @@ public class HotFragment extends Fragment {
     private void findinfor() {
         rlv = view.findViewById(R.id.hot_rlv);
         rlv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rlv.setNestedScrollingEnabled(false);
     }
 }

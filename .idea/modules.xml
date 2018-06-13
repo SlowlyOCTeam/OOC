@@ -4,10 +4,13 @@
     <modules>
       <module fileurl="file://E:\OOC\OC.iml" filepath="E:\OOC\OC.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOC.iml" filepath="$PROJECT_DIR$/OOC.iml" />
+      <module fileurl="file://C:\Project\OOC\OOC.iml" filepath="C:\Project\OOC\OOC.iml" />
       <module fileurl="file://$PROJECT_DIR$/WeiXinRecorded/WeiXinRecorded.iml" filepath="$PROJECT_DIR$/WeiXinRecorded/WeiXinRecorded.iml" />
       <module fileurl="file://E:\OOC\WeiXinRecorded\WeiXinRecorded.iml" filepath="E:\OOC\WeiXinRecorded\WeiXinRecorded.iml" />
+      <module fileurl="file://C:\Project\OOC\WeiXinRecorded\WeiXinRecorded.iml" filepath="C:\Project\OOC\WeiXinRecorded\WeiXinRecorded.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://E:\OOC\app\app.iml" filepath="E:\OOC\app\app.iml" />
+      <module fileurl="file://C:\Project\OOC\app\app.iml" filepath="C:\Project\OOC\app\app.iml" />
     </modules>
   </component>
 </project>
