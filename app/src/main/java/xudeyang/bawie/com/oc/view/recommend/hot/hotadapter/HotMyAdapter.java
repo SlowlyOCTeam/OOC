@@ -60,7 +60,7 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         final MyViewHolder my = (MyViewHolder) holder;
         Glide.with(context)
                 .load(list.get(position).getCover())
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ttt)
                 .transform(new GlideCircleTransform(context))
                 .into(my.touxian);
         my.time.setText(list.get(position).getCreateTime());

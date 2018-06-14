@@ -69,7 +69,7 @@ dependencies {
             }
         }
     }
-
+    compile 'com.android.support:cardview-v7:23.2.0'
     //微信拍摄   张凯
     implementation project(':WeiXinRecorded')
     implementation 'com.guoqi.widget:actionsheet:1.0'

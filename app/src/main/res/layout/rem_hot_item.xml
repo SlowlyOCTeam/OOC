@@ -17,7 +17,7 @@
             android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/ttt" />
 
         <LinearLayout
             android:layout_width="wrap_content"

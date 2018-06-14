@@ -51,12 +51,17 @@ public class PassageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         final MyViewHolder my = (MyViewHolder) holder;
         Glide.with(context)
                 .load(list.get(position).getUser().getIcon())
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ttt)
                 .transform(new GlideCircleTransform(context))
                 .into(my.img_01);
 
 
+
+
         my.tv_name.setText(list.get(position).getUser().getNickname());
+        if (my.tv_name.getText()==""|| my.tv_name.getText()==null){
+            my.tv_name.setText("此位用户没有设置用户名");
+        }
         my.tv_time.setText(list.get(position).getCreateTime());
         my.tv_title.setText(list.get(position).getContent());
         //动画

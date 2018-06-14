@@ -3,6 +3,7 @@ package xudeyang.bawie.com.oc.view.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -45,7 +46,7 @@ public class PassageFM extends Fragment {
     private String mParam2;
     private View inflate;
     private RecyclerView rlv;
-
+    private CardView cardView;
     public PassageFM() {
         // Required empty public constructor
     }
@@ -91,6 +92,7 @@ public class PassageFM extends Fragment {
         initto();
         //网络请求+适配器展示
         network();
+
         mycreation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +131,12 @@ public class PassageFM extends Fragment {
     private void initto() {
         rlv = inflate.findViewById(R.id.passage_rlv);
         rlv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        cardView = inflate.findViewById(R.id.cardView);
+    /*    cardView.setRadius(8);//设置图片圆角的半径大小
+
+        cardView.setCardElevation(8);//设置阴影部分大小
+
+        cardView.setContentPadding(5,5,5,5);//设置图片距离阴影大小*/
     }
 
     @Override
