@@ -22,6 +22,7 @@ import io.reactivex.schedulers.Schedulers;
 import xudeyang.bawie.com.oc.R;
 import xudeyang.bawie.com.oc.utils.RetrofitUtil;
 import xudeyang.bawie.com.oc.view.activity.ZKCreationActivity;
+import xudeyang.bawie.com.oc.view.activity.user.UserActivity;
 import xudeyang.bawie.com.oc.view.passage.PassageAdapter;
 import xudeyang.bawie.com.oc.view.passage.PassageBean;
 
@@ -107,9 +108,20 @@ public class PassageFM extends Fragment {
                 .subscribe(new Consumer<PassageBean>() {
                     @Override
                     public void accept(PassageBean passageBean) throws Exception {
-                        List<PassageBean.DataBean> data = passageBean.getData();
+                        final List<PassageBean.DataBean> data = passageBean.getData();
                         PassageAdapter passageAdapter = new PassageAdapter(data, getActivity());
                         rlv.setAdapter(passageAdapter);
+                        passageAdapter.setOnItemClickListener(new PassageAdapter.OnItemClickListener() {
+                            @Override
+                            public void onClick(int position) {
+                                int uid = data.get(position).getUid();
+                                Intent intent = new Intent(getActivity(), UserActivity.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putString("name", String.valueOf(uid));
+                                intent.putExtras(bundle);
+                                getActivity().startActivity(intent);
+                            }
+                        });
                     }
                 });
     }

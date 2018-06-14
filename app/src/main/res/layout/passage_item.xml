@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#fff"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50">
+        android:layout_height="@dimen/dp_100">
 
         <ImageView
             android:id="@+id/img_01"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:src="@drawable/ic_launcher_background" />
@@ -28,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="天蝎喝牛奶"
+                android:textSize="@dimen/sp_16"
                 android:textColor="#ff0404" />
 
             <TextView
@@ -36,12 +39,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:text="00000"
-                android:textSize="8sp" />
+                android:textSize="@dimen/sp_10" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:id="@+id/ll_d"
+            android:layout_marginTop="@dimen/dp_20"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
@@ -66,6 +70,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:id="@+id/ll_c"
+            android:layout_marginTop="@dimen/dp_20"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
@@ -88,6 +93,7 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_b"
+            android:layout_marginTop="@dimen/dp_20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -115,14 +121,16 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_28"
             android:layout_marginRight="10dp"
             android:src="@drawable/hot_a3" />
     </RelativeLayout>
     <TextView
-        android:layout_gravity="center"
-        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_40"
+       android:layout_gravity="center_horizontal"
         android:text="努力加载中"
+        android:textColor="#000"
         android:id="@+id/passage_item_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

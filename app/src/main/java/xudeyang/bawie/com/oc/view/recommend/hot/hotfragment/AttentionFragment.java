@@ -1,5 +1,6 @@
 package xudeyang.bawie.com.oc.view.recommend.hot.hotfragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,6 +19,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import xudeyang.bawie.com.oc.R;
 import xudeyang.bawie.com.oc.utils.RetrofitUtil;
+import xudeyang.bawie.com.oc.view.activity.user.UserActivity;
 import xudeyang.bawie.com.oc.view.recommend.hot.hotadapter.HotMyAdapter;
 import xudeyang.bawie.com.oc.view.recommend.hot.hotbean.RecHotBean;
 
@@ -45,11 +47,22 @@ public class AttentionFragment extends Fragment {
                 .subscribe(new Consumer<RecHotBean>() {
                     @Override
                     public void accept(RecHotBean recHotBean) throws Exception {
-                        List<RecHotBean.DataBean> list = recHotBean.getData();
+                        final List<RecHotBean.DataBean> list = recHotBean.getData();
                         String msg = recHotBean.getMsg();
                         //Log.i("Hot",msg+"==========");
                         HotMyAdapter hotMyAdapter = new HotMyAdapter(getContext(), list);
                         rlv.setAdapter(hotMyAdapter);
+                        hotMyAdapter.setOnItemClickListener(new HotMyAdapter.OnItemClickListener() {
+                            @Override
+                            public void onClick(int position) {
+                                int uid = list.get(position).getUid();
+                                Intent intent = new Intent(getActivity(), UserActivity.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putString("name", String.valueOf(uid));
+                                intent.putExtras(bundle);
+                                getActivity().startActivity(intent);
+                            }
+                        });
                     }
                 });
     }

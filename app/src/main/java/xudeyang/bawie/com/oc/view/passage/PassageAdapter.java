@@ -27,11 +27,18 @@ public class PassageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private List<PassageBean.DataBean> list;
     private Context context;
     private boolean ao = false;
+    private OnItemClickListener mOnItemClickListener;
+
     public PassageAdapter(List<PassageBean.DataBean> list, Context context) {
         this.list = list;
         this.context = context;
     }
-
+    public interface OnItemClickListener{
+        void onClick( int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener ){
+        this. mOnItemClickListener=onItemClickListener;
+    }
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,7 +47,7 @@ public class PassageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         final MyViewHolder my = (MyViewHolder) holder;
         Glide.with(context)
                 .load(list.get(position).getUser().getIcon())
@@ -56,7 +63,15 @@ public class PassageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         my.ll_b.setVisibility(View.GONE);
         my.ll_c.setVisibility(View.GONE);
         my.ll_d.setVisibility(View.GONE);
+        if( mOnItemClickListener!= null){
+            my.img_01.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickListener.onClick(position);
+                }
+            });
 
+        }
         my.img_a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,6 +138,7 @@ public class PassageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     my.ll_d.setVisibility(View.GONE);*/
                     ao = false;
                 }
+
             }
         });
 
