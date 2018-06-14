@@ -64,10 +64,9 @@ public class HotMyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 .transform(new GlideCircleTransform(context))
                 .into(my.touxian);
         my.time.setText(list.get(position).getCreateTime());
-        if (list.get(position).getWorkDesc()==null||list.get(position).getWorkDesc()==""){
-            my.name.setText("天蝎喝牛奶");
-        }else {
-            my.name.setText(list.get(position).getWorkDesc());
+        my.name.setText(list.get(position).getWorkDesc());
+        if (my.name.getText()==""|| my.name.getText()==null){
+            my.name.setText("无名用户");
         }
         my.title.setText(list.get(position).getUser().getNickname());
         Glide.with(context)
